@@ -1,96 +1,253 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Toko Bunga Indah</title>
+    <title>Portofolio Wulan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap');
+        
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
 
-    <!-- Link ke CSS -->
-    <link rel="stylesheet" href="style.css">
+        .glass {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        .gradient-brand {
+            background: linear-gradient(135deg, #22c55e, #10b981);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .bg-brand {
+            background: linear-gradient(135deg, #22c55e, #10b981);
+        }
+
+        .image-frame {
+            position: relative;
+            border-radius: 2rem;
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+        }
+
+        .image-frame::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border: 8px solid white;
+            border-radius: 2rem;
+            pointer-events: none;
+        }
+    </style>
 </head>
+<body class="bg-slate-50 text-slate-900">
 
-<body>
-
-<header>
-    <h1>Toko Bunga Indah</h1>
-    <nav>
-        <ul>
-            <li><a href="#beranda">Beranda</a></li>
-            <li><a href="#belanja">Belanja</a></li>
-            <li><a href="#galeri">Galeri</a></li>
-            <li><a href="#manfaat">Manfaat</a></li>
-            <li><a href="#kontak">Kontak</a></li>
-        </ul>
+    <!-- Navigasi -->
+    <nav class="fixed w-full z-50 glass border-b border-slate-200">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex-shrink-0">
+                    <span class="text-2xl font-bold gradient-brand">Wulan.</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="flex items-center space-x-10">
+                        <a href="#home" class="hover:text-emerald-600 transition-colors font-semibold">Beranda</a>
+                        <a href="#about" class="hover:text-emerald-600 transition-colors font-semibold">Tentang</a>
+                        <a href="#skills" class="hover:text-emerald-600 transition-colors font-semibold">Keahlian</a>
+                        <a href="#contact" class="bg-brand text-white px-6 py-2.5 rounded-full hover:shadow-lg hover:opacity-90 transition font-semibold">Kontak</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-slate-600">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Menu Mobile -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white px-6 py-6 border-b border-slate-200 space-y-4 shadow-xl">
+            <a href="#home" class="block font-semibold py-2">Beranda</a>
+            <a href="#about" class="block font-semibold py-2">Tentang</a>
+            <a href="#skills" class="block font-semibold py-2">Keahlian</a>
+            <a href="#contact" class="block font-semibold py-2 text-emerald-600">Kontak</a>
+        </div>
     </nav>
-</header>
 
-<!-- BERANDA -->
-<section id="beranda">
-    <h2>Beranda</h2>
-    <p>Selamat datang di Toko Bunga Indah! Kami menyediakan berbagai bunga segar untuk setiap momen spesial.</p>
-    <img src="mawar mearah.jpg" width="300" alt="Bunga Mawar Merah">
-</section>
-
-<!-- BELANJA -->
-<section id="belanja">
-    <h2>Belanja</h2>
-
-    <div class="product-grid">
-
-        <div class="product">
-            <img src="mawar putih.jpg" width="200">
-            <h3>Mawar Putih</h3>
-            <p>Mawar putih elegan.</p>
-            <a href="#">Pesan Sekarang</a>
+    <!-- Bagian Utama (Hero) -->
+    <header id="home" class="pt-40 pb-20 px-6 overflow-hidden">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-16">
+            <div class="md:w-1/2 text-center md:text-left z-10">
+                <div class="inline-block px-4 py-1.5 mb-6 rounded-full bg-emerald-100 text-emerald-700 text-sm font-bold tracking-wide uppercase">
+                    Selamat Datang di Portofolio Saya
+                </div>
+                <h1 class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight">
+                    Halo, Saya <br><span class="gradient-brand">Wulan</span>
+                </h1>
+                <p class="text-xl text-slate-600 mb-10 max-w-lg leading-relaxed">
+                    Seorang pelajar yang bersemangat dalam dunia teknologi dan desain. Senang belajar hal baru dan menciptakan sesuatu yang bermanfaat.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-5 justify-center md:justify-start">
+                    <a href="#contact" class="bg-brand text-white px-10 py-4 rounded-2xl font-bold hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 text-center">
+                        Hubungi Saya
+                    </a>
+                    <a href="#about" class="bg-white border-2 border-slate-200 text-slate-700 px-10 py-4 rounded-2xl font-bold hover:border-emerald-500 hover:text-emerald-600 transition-all duration-300 text-center">
+                        Tentang Saya
+                    </a>
+                </div>
+            </div>
+            
+            <div class="md:w-1/2 relative">
+                <!-- Frame Foto -->
+                <div class="image-frame w-72 h-96 md:w-[400px] md:h-[500px] mx-auto transform hover:scale-[1.02] transition-transform duration-500">
+                    <img src="wulan.jpg" alt="Foto Wulan" class="w-full h-full object-cover">
+                </div>
+                <!-- Ornamen Dekoratif -->
+                <div class="absolute -z-10 -bottom-10 -right-10 w-64 h-64 bg-emerald-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
+                <div class="absolute -z-10 -top-10 -left-10 w-64 h-64 bg-teal-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
+            </div>
         </div>
+    </header>
 
-        <div class="product">
-            <img src="mawar pink.jpg" width="200">
-            <h3>Mawar Merah Muda</h3>
-            <p>Mawar romantis.</p>
-            <a href="#">Pesan Sekarang</a>
+    <!-- Tentang Saya -->
+    <section id="about" class="py-24 bg-white">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Mengenal Saya Lebih Dekat</h2>
+                <div class="w-20 h-1.5 bg-brand mx-auto rounded-full"></div>
+            </div>
+            <p class="text-xl text-slate-600 leading-relaxed text-center italic mb-12">
+                "Saya percaya bahwa setiap tantangan adalah kesempatan untuk tumbuh dan berkembang."
+            </p>
+            <div class="grid md:grid-cols-2 gap-12 mt-16">
+                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100">
+                    <h3 class="text-xl font-bold mb-4 flex items-center gap-3">
+                        <i class="fas fa-user-graduate text-emerald-600"></i> Latar Belakang
+                    </h3>
+                    <p class="text-slate-600 leading-relaxed">
+                        Saya sekolah di SMA NEGERI 1 SUBANG , saya lahir pada tanggal 03-10-2007 .
+                    </p>
+                </div>
+                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100">
+                    <h3 class="text-xl font-bold mb-4 flex items-center gap-3">
+                        <i class="fas fa-heart text-emerald-600"></i> Minat & Tujuan
+                    </h3>
+                    <p class="text-slate-600 leading-relaxed">
+                        Tujuan saya adalah menjadi seorang profesional di bidang kreatif yang mampu membantu banyak orang melalui solusi teknologi yang inovatif.
+                    </p>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="product">
-            <img src="mawar ungu.jpg" width="200">
-            <h3>Mawar Ungu</h3>
-            <p>Mawar unik.</p>
-            <a href="#">Pesan Sekarang</a>
+    <!-- Keahlian -->
+    <section id="skills" class="py-24 bg-slate-50">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-16">Keahlian & Alat</h2>
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white p-10 rounded-3xl shadow-sm hover:shadow-xl transition-all border border-slate-100 text-center group">
+                    <div class="w-16 h-16 bg-orange-100 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fab fa-html5 text-3xl text-orange-600"></i>
+                    </div>
+                    <h4 class="font-bold text-lg">HTML5</h4>
+                </div>
+                <div class="bg-white p-10 rounded-3xl shadow-sm hover:shadow-xl transition-all border border-slate-100 text-center group">
+                    <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fab fa-css3-alt text-3xl text-blue-600"></i>
+                    </div>
+                    <h4 class="font-bold text-lg">CSS3</h4>
+                </div>
+                <div class="bg-white p-10 rounded-3xl shadow-sm hover:shadow-xl transition-all border border-slate-100 text-center group">
+                    <div class="w-16 h-16 bg-emerald-100 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-paint-brush text-3xl text-emerald-600"></i>
+                    </div>
+                    <h4 class="font-bold text-lg">Design</h4>
+                </div>
+                <div class="bg-white p-10 rounded-3xl shadow-sm hover:shadow-xl transition-all border border-slate-100 text-center group">
+                    <div class="w-16 h-16 bg-slate-100 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-camera text-3xl text-slate-700"></i>
+                    </div>
+                    <h4 class="font-bold text-lg">Fotografi</h4>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="product">
-            <img src="mawar biru.jpg" width="200">
-            <h3>Mawar Biru</h3>
-            <p>Mawar langka.</p>
-            <a href="#">Pesan Sekarang</a>
+    <!-- Kontak -->
+    <section id="contact" class="py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="bg-slate-900 rounded-[3rem] p-10 md:p-20 text-white relative overflow-hidden">
+                <!-- Background pattern -->
+                <div class="absolute top-0 right-0 w-64 h-64 bg-emerald-500 rounded-full opacity-10 -mr-32 -mt-32"></div>
+                
+                <div class="relative z-10 grid lg:grid-cols-2 gap-16 items-center">
+                    <div>
+                        <h2 class="text-4xl font-bold mb-6 text-white">Mari Mulai Sesuatu yang Luar Biasa!</h2>
+                        <p class="text-slate-400 text-lg mb-10">
+                            Saya selalu terbuka untuk diskusi atau kolaborasi menarik. Kirim pesan kapan saja!
+                        </p>
+                        <div class="space-y-6">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center text-emerald-400">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <span class="text-lg">wulansuci07@email.com</span>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center text-emerald-400">
+                                    <i class="fab fa-whatsapp"></i>
+                                </div>
+                                <span class="text-lg">+62 812-3456-7890</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-4">
+                        <a href="#" class="flex items-center justify-center gap-3 bg-white text-slate-900 px-8 py-5 rounded-2xl font-bold hover:bg-emerald-500 hover:text-white transition-all duration-300">
+                            <i class="fab fa-instagram text-xl"></i> Instagram
+                        </a>
+                        <a href="#" class="flex items-center justify-center gap-3 border-2 border-white/20 text-white px-8 py-5 rounded-2xl font-bold hover:bg-white/10 transition-all duration-300">
+                            <i class="fab fa-linkedin text-xl"></i> LinkedIn
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
+    </section>
 
-    </div>
-</section>
+    <!-- Footer -->
+    <footer class="py-12 bg-slate-50 border-t border-slate-200">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <h3 class="text-xl font-bold gradient-brand mb-6">Wulan.</h3>
+            <p class="text-slate-500 text-sm">
+                &copy; <span id="year"></span> Wulan suci. Seluruh Hak Cipta Dilindungi.
+            </p>
+        </div>
+    </footer>
 
-<!-- GALERI -->
-<section id="galeri">
-    <h2>Galeri</h2>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
 
-    <img src="mawar mearah.jpg" width="200">
-    <img src="mawar pink.jpg" width="200">
-    <img src="mawar putih.jpg" width="200">
-    <img src="mawar ungu.jpg" width="200">
-    <img src="gambar/mawar_biru.jpg" width="200">
-</section>
+        const menuBtn = document.getElementById('mobile-menu-button');
+        const menu = document.getElementById('mobile-menu');
 
-<!-- MANFAAT -->
-<section id="manfaat">
-    <h2>Manfaat Bunga</h2>
-    <ul>
-        <li>Mengurangi stres</li>
-        <li>Memperindah ruangan</li>
-        <li>Meningkatkan suasana hati</li>
-        <li>Hadiah yang bermakna</li>
-    </ul>
-</section>
+        menuBtn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
 
-<!-- KONTAK -->
-<section id="kontak">
-    <h2>Kontak</h2>
-    <p>Nama: Wulan Suci
+        // Efek smooth scroll manual jika diperlukan
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
